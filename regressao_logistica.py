@@ -8,6 +8,11 @@ import pandas as pd
 
 df = pd.read_csv('Spotify Top 200 Global (2017-2021).csv')
 
+# Exclusão de variáveis não necessárias:
+
+df.drop(['Artist', 'Track', 'Link', 'Week', 'Album_Name', 'Track_Number_on_Album', 'Artist_Genres'],
+        axis=1, inplace=True)
+
 # Definindo variáveis Preditoras e variável de resposta:
 
 X = df[['Rank', 'Streams', 'Duration_MS', 'Explicit']]
@@ -37,7 +42,7 @@ y_pred_prob = logit.predict_proba(X_test)[:, 1]
 # Gera fpr, tpr e thresholds
 fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
 
-# c=Curva ROC
+# Curva ROC
 plt.plot([0, 1], [0, 1], 'k--')
 plt.plot(fpr, tpr)
 plt.xlabel('False Positive Rate')
