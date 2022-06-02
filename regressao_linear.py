@@ -1,6 +1,7 @@
 # Bibliotecas
 import pandas as pd
 import numpy as np
+import sweetviz as sv
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
@@ -57,3 +58,6 @@ print('MSE:', metrics.mean_squared_error(y_test, predictions))
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, predictions)))
 
 pd.DataFrame(predictions).to_csv('predictions.csv')
+
+report = sv.analyze(df)
+report.show_html()
