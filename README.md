@@ -32,8 +32,6 @@ Para este dataframe, optamos pela remoção das variáveis: Track, Artist, Link,
 
 ## Interpretação de Coeficientes:
 
-![](C:\Users\lucas\OneDrive\Imagens\Captura de tela 2022-04-25 012213.png)
-
 Com base nos valores obtidos, podemos concluir que: 
 
 * A variável Rank é fortemente influenciada pelo total de seguidores do artista;
